@@ -9,25 +9,48 @@
 
             Name: <input type="text" placeholder="Name" name="name">
 
-            Gender: <input type="text" placeholder="Gender" name="gender">
+            Gender: <select name="Gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
             
-            Date Of Birth: <input type="text" placeholder="Name" name="dob">
+            Date Of Birth: <input type="date" placeholder="Name" name="dob">
             
             Phone No.: <input type="number" placeholder="Phone" name="phone">
             
             Email: <input type="email" placeholder="email" name="email">
             
-            Gender: <input type="text" placeholder="Gender" name="gender">
+            Current Address: <input type="text" placeholder="address" name="cur_add" id="cur_add">
             
-            Current Address: <input type="text" placeholder="address" name="cur_add">
-            
-            Permanent Address: <input type="text" placeholder="Name" name="per_add">
+            <input type="checkbox" id="check" onchange= "checkAdd()">
+            Check if Permanent and current address are same
+
+            Permanent Address: <input type="text" placeholder="Permanent Address" name="per_add" id="per_add">
 
             College: <input type="text" placeholder="College" name="college">
 
             Branch: <input type="text" placeholder="Branch" name="branch">
             
         </form>
-        
+
+        <script> 
+            function checkAdd() 
+            { 
+              if (document.getElementById("check").checked) 
+              { 
+                // console.log(document.getElementById('cur_add').value)
+                document.getElementById('per_add').value=document. 
+                         getElementById('cur_add').value; 
+              } 
+                  
+              else
+              { 
+                document.getElementById('per_add').value=""; 
+                document.getElementById('per_add').value=""; 
+              } 
+            } 
+        </script> 
+
     </body>
 </html>

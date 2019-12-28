@@ -6,4 +6,8 @@ const app = express();
 
 router.route('/user').get(mainController.user)
 
+router.route('/user/register').get(mainController.register)
+
+
+
 module.exports = router;
