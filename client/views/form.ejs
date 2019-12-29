@@ -9,7 +9,7 @@
 
             Name: <input type="text" placeholder="Name" name="name">
 
-            Gender: <select name="Gender">
+            Gender: <select name="gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -32,6 +32,7 @@
 
             Branch: <input type="text" placeholder="Branch" name="branch">
             
+            <button>Submit</button>
         </form>
 
         <script> 
@@ -40,8 +41,7 @@
               if (document.getElementById("check").checked) 
               { 
                 // console.log(document.getElementById('cur_add').value)
-                document.getElementById('per_add').value=document. 
-                         getElementById('cur_add').value; 
+                document.getElementById('per_add').value = document.getElementById('cur_add').value; 
               } 
                   
               else

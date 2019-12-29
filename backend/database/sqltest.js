@@ -21,15 +21,15 @@ const User = sequelize.define('users',{
         type: Sequelize.STRING,
         allowNull: false,
     },
-    DOB :{
+    dob :{
         type: Sequelize.DATE,
         allowNull: false,
     },
-    cur_address: {
+    cur_add: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    per_address :{
+    per_add :{
         type: Sequelize.STRING,
         allowNull: false,
     },

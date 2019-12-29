@@ -6,5 +6,25 @@
         <form action="/user/register" method="GET">
             <button>Add new user</button>
         </form>
+        Registered Users : 
+        <% for (user in users){ %>
+            <%= users[user].name %>
+            <button onclick="edit(<%= users[user].id %>)">Edit User </button>
+            <button onclick="delete(<%= users[user].id %>)">Delete User</button>
+
+        <% } %>
+
+        <script>
+        
+        function edit(id){
+            window.location.href = "/editUser/:" + id;
+        }
+
+        function delete(id){
+
+        }
+
+
+        </script>
     </body>
 </html>
