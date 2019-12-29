@@ -1,0 +1,17 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        Remove <%= user.name %> 
+
+        <form action="/deleteUser" method="POST">
+            <button name="id" value="<%= user.id %>">Yes</button>
+        </form>
+    
+        <form action="/user" method="GET">
+            <button>No</button>
+        </form>
+    </body>
+</html>
