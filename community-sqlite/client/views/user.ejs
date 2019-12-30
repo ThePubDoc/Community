@@ -1,0 +1,39 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="/user/register" method="GET">
+            <button>Add new user</button>
+        </form>
+        Registered Users : 
+        <% for (user in users){ %>
+            <%= users[user].name %>
+            <!-- <form action="/editUser" method="GET">
+                <button name="<%= users[user].id %>" value="<%= users[user].id %>">Edit User </button>
+            </form> -->
+            
+            <button onclick="edit(<%= users[user].id %>)">Edit User </button>
+            
+            
+            <button onclick="del(<%= users[user].id %>)">Delete User</button>
+
+        <% } %>
+
+        
+    </body>
+    <script>
+        
+        function edit(id){
+            // console.log(id);
+            window.location.href = "/editUser/" + id;
+        }
+
+        function del(id){
+            // console.log(id)
+            window.location.href = "/deleteUser/" + id;
+        }
+
+
+        </script>
+</html>
