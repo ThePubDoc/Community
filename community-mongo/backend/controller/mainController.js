@@ -1,37 +1,37 @@
 const dbConn = require("../database/sqltest.js"); 
 const User = dbConn.User;
-const mongo = require("../database/mongo")
+const mongoose = require("mongoose")
+const users = require("../database/mongo")
 
 function user(req,res){
-
-}
-
-function user(req,res){
-    User.findAll()
-    .then(users => {
-        // console.log(users)
-        res.render("user", { 
-            users : users,
+    users.find()
+        .exec()
+        .then(users => {
+            // console.log(users)
+            res.render("user" , {
+                users : users
+            })
         })
-    })
+        .catch(err => {
+            console.log("error in finding all users", err)
+        })
 }
 
 function update(req,res){
-    // console.log(req.params)
-    const {id} = req.params
-    // console.log(id)
-    User.findOne({
-        where: {
-            id: id
-        }
-    })
-    .then(user => {
-        // console.log("....",user)
-        res.render("editUser", {
-            user : user,
+    const id = req.params.id
+    users.findById(id)
+        .exec()
+        .then(user => {
+            console.log(user)
+            res.render("editUser" , {
+                user : user
+            })
         })
-    })
+        .catch(err => {
+            console.log("error in update" , err)
+        })
 }
+
 
 function register(req,res){
     res.render("form")
@@ -40,17 +40,17 @@ function register(req,res){
 function del(req,res){
     console.log(req.params)
     const {id} = req.params
-    User.findOne({
-        where: {
-            id: id
-        }
-    })
-    .then(user => {
-        // console.log("....",user)
-        res.render("deleteUser", {
-            user : user,
+    users.findById(id)
+        .exec()
+        .then(user => {
+            console.log(user)
+            res.render("deleteUser",{
+                user : user
+            })
         })
-    })
+        .catch(err => {
+            console.log("error in removing", err)
+        })
 }
 
 

@@ -13,10 +13,10 @@
                 <button name="<%= users[user].id %>" value="<%= users[user].id %>">Edit User </button>
             </form> -->
             
-            <button onclick="edit(<%= users[user].id %>)">Edit User </button>
+            <button onclick="edit('<%= users[user].id %>')">Edit User </button>
             
             
-            <button onclick="del(<%= users[user].id %>)">Delete User</button>
+            <button onclick="del('<%= users[user].id %>')">Delete User</button>
 
         <% } %>
 
@@ -25,12 +25,12 @@
     <script>
         
         function edit(id){
-            // console.log(id);
+            console.log(id);
             window.location.href = "/editUser/" + id;
         }
 
         function del(id){
-            // console.log(id)
+            console.log(id)
             window.location.href = "/deleteUser/" + id;
         }
 
